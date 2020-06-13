@@ -6,6 +6,6 @@ public interface CrudDao<T,ID> {
    void save (T model);
    void update (T model, ID id);
    void delete (ID id);
-   void findAll(List<T> model);
+   List<T> findAll(List<T> model);
    T findById(ID id);
 }

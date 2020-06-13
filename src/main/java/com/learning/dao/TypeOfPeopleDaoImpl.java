@@ -107,10 +107,9 @@ public class TypeOfPeopleDaoImpl implements TypeOfPeopleDao {
     }
 
 
-
     @Override
-    public void findAll(List<TypeOfPeople> model) {
-
+    public List<TypeOfPeople> findAll(List<TypeOfPeople> model) {
+        return null;
     }
 
     @Override

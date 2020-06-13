@@ -35,8 +35,8 @@ public class CityDaoImpl implements CityDao {
     }
 
     @Override
-    public void findAll(List<City> model) {
-
+    public List<City> findAll(List<City> model) {
+        return null;
     }
 
     @Override
