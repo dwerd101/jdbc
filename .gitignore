@@ -106,4 +106,5 @@ out/artifacts/stock_inventory_war_exploded/META-INF/MANIFEST.MF
 
 target/
 .iml
+jdbc5.iml
 # Created by .ignore support plugin (hsz.mobi)
