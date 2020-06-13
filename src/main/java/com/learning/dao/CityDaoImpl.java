@@ -2,9 +2,7 @@ package com.learning.dao;
 
 import com.learning.jdbc.connection.ConnectionDataBaseFactory;
 import com.learning.model.City;
-import com.learning.model.TypeOfPeople;
 
-import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -42,11 +40,11 @@ public class CityDaoImpl implements CityDao {
     }
 
     @Override
-    public City findById(Long aLong) {
+    public City findById(Long Long) {
         try {
             connection = ConnectionDataBaseFactory.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(SQL_FIND_BY_ID);
-            preparedStatement.setLong(1,aLong);
+            preparedStatement.setLong(1,Long);
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()) {
                 Long cityId =  resultSet.getLong(1);

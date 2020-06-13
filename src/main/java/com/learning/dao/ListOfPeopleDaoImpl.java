@@ -25,6 +25,12 @@ public class ListOfPeopleDaoImpl implements ListOfPeopleDao {
             "from list_of_people\n" +
             "where count=? and city_id=?";
 
+    /**
+     * Вывести информацию обо всех городах, в которых проживают жители
+     * выбранного типа.
+     * @param typeOfPeopleId parameter value
+     * @return a {@code List<TypeOfPeople>} containing the elements
+     */
     @Override
     public List<ListOfPeople> findAllCityAndTypeOfPeople( Long typeOfPeopleId) {
         try {
@@ -49,12 +55,20 @@ public class ListOfPeopleDaoImpl implements ListOfPeopleDao {
 
     }
 
+    /**
+     * Вывести информацию о городе с заданным количеством населения
+     * и всех типах жителей, в нем проживающих.
+     * @param cityId parameter value
+     * @param count parameter value
+     * @return a {@code List<TypeOfPeople>} containing the elements
+     */
     @Override
     public List<ListOfPeople> findByCityAndCountAndAllTypeOfPeople(Long cityId, Long count) {
         try {
             List<ListOfPeople> listOfPeopleList = new ArrayList<>();
             connection = ConnectionDataBaseFactory.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL_FIND_BY_CITY_AND_COUNT_AND_ALL_TYPE_OF_PEOPLE);
+            PreparedStatement preparedStatement = connection
+                    .prepareStatement(SQL_FIND_BY_CITY_AND_COUNT_AND_ALL_TYPE_OF_PEOPLE);
             preparedStatement.setLong(1,count);
             preparedStatement.setLong(2, cityId);
             ResultSet resultSet = preparedStatement.executeQuery();

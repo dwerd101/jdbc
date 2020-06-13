@@ -1,8 +1,7 @@
 package com.learning.dao;
 
-import com.learning.model.City;
+
 import com.learning.model.ListOfPeople;
-import com.learning.model.TypeOfPeople;
 
 import java.util.List;
 

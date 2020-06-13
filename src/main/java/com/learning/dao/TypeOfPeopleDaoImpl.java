@@ -29,6 +29,12 @@ public class TypeOfPeopleDaoImpl implements TypeOfPeopleDao {
             "where count = ?";
 
 
+    /**
+     * Вывести информацию обо всех жителях заданного города, разговаривающих на заданном языке
+     * @param id parameter value
+     * @param language parameter value
+     * @return a {@code List<TypeOfPeople>} containing the elements
+     */
     @Override
     public List<TypeOfPeople> findByCityAndLanguage(Long id, String language) {
         try {
@@ -54,6 +60,10 @@ public class TypeOfPeopleDaoImpl implements TypeOfPeopleDao {
         }
     }
 
+    /**
+     * Вывести информацию о самом древнем типе жителей
+     * @return a TypeOfPeople object
+     */
     @Override
     public TypeOfPeople findByMinCount() {
         try {
